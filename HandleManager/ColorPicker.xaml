@@ -1,0 +1,46 @@
+﻿<Window x:Class="HandleManager.ColorPicker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HandleManager"
+        mc:Ignorable="d"
+        Title="ColorPicker" Height="158" Width="102" ShowInTaskbar="False" ResizeMode="NoResize" AllowsTransparency="True" WindowStyle="None">
+    <Grid>
+        <Border x:Name="magnify" BorderBrush="#FFE0DDDD" BorderThickness="1" Width="102" Height="158" Background="#FF181B26" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="16"/>
+                    <RowDefinition Height="16"/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+                <Ellipse x:Name="zoomb" Margin="5" Width="88" Height="88" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse.Fill>
+                        <ImageBrush x:Name="imgz" Stretch="Uniform"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Path x:Name="obj" StrokeThickness="8" Data="M0,44h40 M48,44h40 M44,0v40 M44,48v40" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Path.Stroke>
+                        <SolidColorBrush Color="#FF08BCFF" Opacity="0.5"/>
+                    </Path.Stroke>
+                </Path>
+                <!--<Border Margin="5" Width="90" Height="90">
+                    <Grid>
+                        <Image x:Name="zoom" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        
+                    </Grid>
+                </Border>-->
+                <TextBlock Grid.Row="1" Margin="6,0" Foreground="White">
+                    <Run>X=</Run><Run x:Name="left">0</Run>
+                    <Run>Y=</Run><Run x:Name="top">0</Run>
+                </TextBlock>
+                <TextBlock Grid.Row="2" Margin="6,0" Foreground="White">
+                    <Run>Zoom:</Run>
+                    <Run x:Name="zooming">8</Run><Run>x</Run>
+                </TextBlock>
+                <Border x:Name="scColor" BorderBrush="#FFE0DDDD" Background="Transparent" BorderThickness="1" Margin="6,0,6,0" Grid.Row="3" VerticalAlignment="Center" Height="18"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
